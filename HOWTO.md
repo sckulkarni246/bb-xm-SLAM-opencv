@@ -1,7 +1,7 @@
 Hello everyone.
 For a basic understanding of this project, please visit the project page at http://sckulkarni246.github.com/shashank-kulkarni/ .
 
-In this how-to file, I will be telling you the <strong>various interconnections</strong> and <strong>purpose of each file</strong> present in this repo. 
+In this HOWTO file, I will be telling you the <strong>various interconnections</strong> and <strong>purpose of each file</strong> present in this repo. 
 
 First, we understand the purpose served by each file.
 
@@ -11,7 +11,7 @@ First, we understand the purpose served by each file.
 
 3) <strong>get_image.cpp</strong> - This is the file very similar to get_capture.cpp in all respects except the fact that instead of an image capture, an existing image from the drive can be loaded. This is the file we used during the testing phase of our project.
 
-4) <strong>find_border.cc</strong> - This is the file which contains the function for detection of the border of our marker i.e. the rectangles and the trapezia (if seen from an angle).
+4) <strong>find_border.cc</strong> - This is the file which contains the function for detection of the border of our marker i.e. the rectangles and the trapezia (if seen at an angle).
 
 5) <strong>find_identifier.cc</strong> - This is the file which contains the function for detection of the identifier of our marker i.e. the circles and the ellipses (if seen from an angle).
 6) allied.cc - This is the file that contains allied functions that are generic in nature.
