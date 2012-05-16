@@ -3,6 +3,8 @@ For a basic understanding of this project, please visit the project page at http
 
 In this HOWTO file, I will be telling you the <strong>various interconnections</strong> and <strong>purpose of each file</strong> present in this repo. 
 
+Before we move ahead, please note: <strong>the functions are all defined in *.cc files and the main applications in *.cpp files.</strong>
+
 First, we understand the purpose served by each file.
 
 1) <strong>runthis.sh</strong> - This is the bash file that we used for execution. In this file, changing the value of the terminating condition for the for-loop will help you control the number of times the executable executes. Also, this file assumes that the name of the executable is 'capture' with parameters 6 and 4. For the explanation of the parameters, read on!
