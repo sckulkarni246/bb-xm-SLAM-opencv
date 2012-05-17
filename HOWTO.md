@@ -1,7 +1,7 @@
 Hello everyone.
 For a basic understanding of this project, please visit the project page at http://sckulkarni246.github.com/shashank-kulkarni/ .
 
-In this HOWTO file, I will be telling you the <strong>various interconnections</strong> and <strong>purpose of each file</strong> present in this repo. 
+In this HOWTO file, I will be telling you the <strong>purpose of each file</strong> present in this repo. 
 
 Before we move ahead, please note: <strong>the functions are all defined in *.cc files and the main applications in *.cpp files.</strong>
 
