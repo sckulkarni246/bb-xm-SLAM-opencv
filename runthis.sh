@@ -7,3 +7,4 @@ do
 ./capture 6 4         # run the executable - the first parameter is the number of peripheral circles, second is the number appended to logfile. eg: logfile4.txt
 echo $c               # display the value of c at the end of each cycle
 done
+# This file may not execute directly in Linux. You need to run the following command to make this work: dos2unix runthis.sh

@@ -118,7 +118,7 @@ for( l = 0; l < N ; l++ )
 		//printf("no of hollow = %d\n",hollow); // // Optional print for debugging
 		}
 	// Check if the marker has been completely found
-	if(periphery == pc && hollow == 1) // In our case, we have used markers with 3 hollow circles compulsarily
+	if(periphery == pc && hollow == 3) // In our case, we have used markers with 3 hollow circles compulsarily
 		{
 		cvResetImageROI(imgcpy);
 		//printf("Decoded value --> %d\n",decode);
