@@ -73,12 +73,12 @@ for( l = 0; l < N ; l++ )
 						//printf("periphery = %d\n",periphery);// Optional print for debugging
 						if(inbetween(ellipse1.size.height,ellipse1.size.width,0.1))
 							{
-							//printf("\nouter circle --> ht = %f,wt = %f\n\n",ellipse.size.height,ellipse.size.width);// Optional print for debugging
+							//printf("\nouter circle --> ht = %f,wt = %f\n\n",ellipse1.size.height,ellipse1.size.width);// Optional print for debugging
 							//printf("Outer circle\n\n");// Optional print for debugging
 							}
 						else
 							{
-							//printf("\nouter ellipse --> ht = %f,wt = %f\n\n",ellipse.size.height/2,ellipse.size.width/2);// Optional print for debugging
+							//printf("\nouter ellipse --> ht = %f,wt = %f\n\n",ellipse1.size.height/2,ellipse1.size.width/2);// Optional print for debugging
 							//printf("Outer ellipse\n\n");// Optional print for debugging
 							}
 						if(checkcontours->v_next != NULL)
@@ -89,17 +89,21 @@ for( l = 0; l < N ; l++ )
 
 							if(inbetween(calc_area,area,0.1))
 								{
-								//printf("inner --> ht = %f,wt = %f\n",ellipse.size.height/2,ellipse.size.width/2);// Optional print for debugging
+								//printf("inner --> ht = %f,wt = %f\n",ellipse2.size.height/2,ellipse2.size.width/2);// Optional print for debugging
 								//printf("calc area=%f, contour area=%f\n",calc_area,area); // Optional print for debugging
 								hollow ++;
 								decode += pow(2,pow1);
-								printf("outer --> ht = %f,wt = %f\n",ellipse1.size.height,ellipse1.size.width);
+								//printf("outer --> ht = %f,wt = %f\n",ellipse1.size.height,ellipse1.size.width);
 								//printf("hollow = %d\n",hollow); // Optional print for debugging
 
 								if(inbetween(ellipse2.size.height,ellipse2.size.width,0.1))
-									//printf("inner circle --> ht = %f,wt = %f\n\n",ellipse.size.height/2,ellipse.size.width/2);// Optional print for debugging
+									{
+									//printf("inner circle --> ht = %f,wt = %f\n\n",ellipse2.size.height/2,ellipse2.size.width/2);// Optional print for debugging
+									}
 								else
-									//printf("inner ellipse --> ht = %f,wt = %f\n\n",ellipse.size.height/2,ellipse.size.width/2);// Optional print for debugging
+									{
+									//printf("inner ellipse --> ht = %f,wt = %f\n\n",ellipse2.size.height/2,ellipse2.size.width/2);// Optional print for debugging
+									}
 								}
 							}
 						}
@@ -122,7 +126,7 @@ for( l = 0; l < N ; l++ )
 		//sprintf(nameof,"logfile%d.txt",pospos);		// Uncomment to log data
 		//logdata(ellipse1.size.width,ellipse1.size.height,decode,pospos); // Uncomment to log data					
 		//logspace(nameof); // Introduces a new line in the log file - enhances readability
-		coord(38,ellipse1.size.width); // Call to the most important function - found in "coordinate.cc" - for printing the coordinate on the console
+		coord(decode,ellipse1.size.width,ellipse1.size.height); // Call to the most important function - found in "coordinate.cc" - for printing the coordinate on the console
 		break;
 		}
 	}
