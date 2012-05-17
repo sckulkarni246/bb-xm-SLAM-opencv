@@ -16,7 +16,8 @@ First, we understand the purpose served by each file.
 4) <strong>find_border.cc</strong> - This is the file which contains the function for detection of the border of our marker i.e. the rectangles and the trapezia (if seen at an angle).
 
 5) <strong>find_identifier.cc</strong> - This is the file which contains the function for detection of the identifier of our marker i.e. the circles and the ellipses (if seen from an angle).
-6) allied.cc - This is the file that contains allied functions that are generic in nature.
+
+6) <strong>allied.cc</strong> - This is the file that contains allied functions that are generic in nature.
 
 7) <strong>coordinate.cc</strong> - This is the file that uses the identified parameters from the marker in order to generate the coordinate of the camera with respect to the marker.
 
@@ -25,7 +26,11 @@ First, we understand the purpose served by each file.
 9) <strong>header.h</strong> - This is the common header file we used throughout the project so that we don't need to type the include files everywhere.
 
 10) <strong>makeroi.cc</strong> - This is the file that is used to restrict the region of interest of our operation to the bounded area given to us by find_border.cc. This greatly improved the efficiency of our system.
- 
+
+11) <strong>interface.cpp</strong> - This is the file that can be used by you to test your webcam and interface it to your computer using OpenCV.
+
+For more information about how the files are linked to each other, please refer to the file <strong>block_diagram.jpg</strong> in the <strong>Downloads</strong> section.
+
 Please note, all the files are well-commented. But, in case of any doubt or query, please contact:
 
 1) <strong>Shashank Kulkarni</strong> - shanky.kulkarni@gmail.com
