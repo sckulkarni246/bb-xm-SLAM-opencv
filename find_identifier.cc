@@ -118,7 +118,7 @@ for( l = 0; l < N ; l++ )
 		//printf("no of hollow = %d\n",hollow); // // Optional print for debugging
 		}
 	// Check if the marker has been completely found
-	if(periphery == pc && hollow == 3) // In our case, we have used markers with 3 hollow circles compulsarily
+	if(periphery == pc && hollow == 1) // In our case, we have used markers with 3 hollow circles compulsarily
 		{
 		cvResetImageROI(imgcpy);
 		//printf("Decoded value --> %d\n",decode);
@@ -126,7 +126,7 @@ for( l = 0; l < N ; l++ )
 		//sprintf(nameof,"logfile%d.txt",pospos);		// Uncomment to log data
 		//logdata(ellipse1.size.width,ellipse1.size.height,decode,pospos); // Uncomment to log data					
 		//logspace(nameof); // Introduces a new line in the log file - enhances readability
-		coord(decode,ellipse1.size.width,ellipse1.size.height); // Call to the most important function - found in "coordinate.cc" - for printing the coordinate on the console
+		coord(decode,ellipse1.size.width,ellipse1.size.height,rect); // Call to the most important function - found in "coordinate.cc" - for printing the coordinate on the console
 		break;
 		}
 	}

@@ -50,9 +50,9 @@ CvSeq* findSquares4( IplImage* img, CvMemStorage* storage )
 			if( l == 0 )
 			{
 			// Apply Canny. Take the upper threshold from slider and set the lower to 0 (which forces edges merging)
-			   cvCanny( tgray, gray, 0, thresh, 5 );
+			//cvCanny( tgray, gray, 0, thresh, 5 );
 			// Dilate canny output to remove potential holes between edge segments
-			   cvDilate( gray, gray, 0, 1 );
+			//cvDilate( gray, gray, 0, 1 );
 			// We did not need to apply Canny as threshold for our images was in the range 70-110. You can try ignoring it too!   
 			}
 			else
