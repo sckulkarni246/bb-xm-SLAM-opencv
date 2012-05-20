@@ -1,3 +1,7 @@
+/* Original code by: Shashank Kulkarni and Aditya Buddhavarapu. Please share and re-share this code. And give due credits
+wherever possible. Thank you! You are awesome!
+*/
+
 #include  "header.h"
 #include "distance.cc"
 
