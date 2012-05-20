@@ -1,3 +1,7 @@
+/* Original code by: Shashank Kulkarni and Aditya Buddhavarapu. Please share and re-share this code. And give due credits
+wherever possible. Thank you! You are awesome!
+*/
+
 #include "header.h"
 
 /* This function return cosine of the angle formed by 3 points - 'pt1' -- 'pt0' -- 'pt2' with 'pt0' being the middle point. Simple trigonometry is used for the angle calculation.
