@@ -1,3 +1,7 @@
+/* Original code by: Shashank Kulkarni and Aditya Buddhavarapu. Please share and re-share this code. And give due credits
+wherever possible. Thank you! You are awesome!
+*/
+
 /* This is the file in which the input image is obtained directly from the camera at run-time. The executable generated from this file has 2 arguments - first is the number of peripheral circles in the marker and the second is  number to be appended to the logfile. eg: logfileX.txt - X = 0 to 9. 
 This file will take the image as input, try to detect the marker and report the circle parameters if the marker is detected and print "circles not found" on the console if the marker is not found.
 */
