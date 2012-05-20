@@ -1,3 +1,7 @@
+/* Original code by: Shashank Kulkarni and Aditya Buddhavarapu. Please share and re-share this code. And give due credits
+wherever possible. Thank you! You are awesome!
+*/
+
 /* While executing, pass the name of the image as the first argument and the number of peripheral circles in the marker as the second argument. This file will take the image as input, try to detect the marker and report the circle parameters if the marker is detected and print "circles not found" on the console if the marker is not found.
 */
 
