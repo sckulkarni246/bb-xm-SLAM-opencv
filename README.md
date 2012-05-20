@@ -1,5 +1,6 @@
 This is <a href="http://shashank-kulkarni.tumblr.com">Shashank Kulkarni</a>'s git repo. Happy learning and sharing!
 
+<strong>We know you will not remove the authors' comments or credits. Because, you are awesome!</strong><br />
 In this repo, you can find the source code of my internship project - "Indoor Navigation System using OpenCV on BeagleBoard-xM" as well as a few other important codes that will help you get the project going.
 
 <strong>For any doubts or queries, feel free to contact any or both of the following:</strong>
