@@ -3,7 +3,7 @@ wherever possible. Thank you! You are awesome!
 */
 
 /*
-This is a simple code that will allow you to test your camera and interface it using OpenCV. On execution, a window will open that will display the capture stream of the camera. It will end after ~100 seconds.
+This is a simple code that will allow you to test your camera and interface it using OpenCV. On execution, a window will open that will display the capture stream of the camera.
 */
 #include "header.h"
 

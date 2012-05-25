@@ -2,44 +2,50 @@
 wherever possible. Thank you! You are awesome!
 */
 
-#include <stdio.h>
+#include "header.h"
+
+// Definition of classes used
+
+class line
+{
+	public:
+		double m,c;
+};
 
 /*
-This is one of the most critical functions of our project. This takes 'width' of the circle as an argument and returns the distance of the camera from the marker as a double value. The method used by us was that we logged the circle widths for every 50 cm of physical distance and carried out linear interpolation between these readings. For instance:
+This is one of the most critical functions of our project. This takes 'height' of the circle as an argument and returns the distance of the camera from the marker as a double value. The method used by us was that we logged the circle heights for every 50 cm of physical distance and carried out linear interpolation between these readings. For instance:
 
-Physical distance      Circle-width
+Physical distance      Circle-height
 -----------------      ------------
      100 cm               90 px
-	 150 cm				  70 px
-	 200 cm 			  40 px
+     150 cm		          70 px
+     200 cm 	          40 px
 	 
-Then, on reciving the width input as 80 px, the distance returned would be 125 cm. The same for 50 px will be 183.33 cm.
+Then, on reciving the height input as 80 px, the distance returned would be 125 cm. The same for 50 px will be 183.33 cm.
 Please note, this piece of code contains values from our experimental data.
 
-We were able to achieve an accuracy of +- 5 cm with this crude method. More data points will only increase the accuracy.
+We were able to achieve an accuracy of +- 2.5 cm with this crude method. More data points will only increase the accuracy.
 */
 
-double distance(double width)
+int located(float loc, float a, float b)
 {
-	double dist=0;
-	if(width >= 47 && width <= 89)
-		{	
-		if(width >= 62)
-			dist = (7150-50*width)/27;
-		else
-			dist = (1070-10*width)/3;
-		}
-	else if(width >= 30 && width <= 47)
+	if(loc>=a && loc<=b)
+	return 1;
+	else
+	return 0;
+}
+
+double distance(double height, float arr_height[], line arr_lines[])
+{
+	int rows = get_rows("calibrate.txt");	
+	double dist=0.0;
+	for(int i=0;i<rows-1;++i)
 		{
-		if(width >= 36)
-			dist = (4550-50*width)/11;
-		else
-			dist = (1650-25*width)/3;
+		if(located(height,arr_height[i],arr_height[i+1]) == 1)
+			{
+			dist = arr_lines[i].m*height + arr_lines[i].c;
+			break;
+			}
 		}
-	else if(width >= 22 && width <= 30)
-		dist = (1350-25*width)/2;
-	else if(width >= 18 && width <= 22)
-		dist = 950-25*width;
-		
-		return dist;
+	return dist;
 }

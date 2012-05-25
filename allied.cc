@@ -77,4 +77,50 @@ int findparallel(CvPoint* pt1,CvPoint* pt2,CvPoint* pt3,CvPoint* pt4)
 		return 0;
 }
 
+// The following function reads the text file named "calibrate.txt" and generates matrices that hold various paramters obtained for calibration purposes. The matrices it populates are passed as parameters
 
+void gen_calibdata(char filename[],float arr_height[], float arr_width[], float arr_dist[],int rows)
+{
+FILE *myfile;
+float values;
+int i,j;
+
+myfile=fopen(filename, "r");
+for(i = 0; i < rows; i++)
+	{
+	for (j = 0 ; j < 3; j++)
+		{
+		fscanf(myfile,"%f",&values);
+		//printf("%f ",values);
+		switch(j)
+			{	
+			case 0: arr_dist[i] = values;
+					break;
+			case 1: arr_height[i] = values;
+					break;
+			case 2: arr_width[i] = values;
+					break;
+			}
+		}
+	//printf("\n");
+	}	
+fclose(myfile);
+}
+
+// The following function returns the number of rows in the "calibrate.txt" text file
+
+int get_rows(char filename[])
+{
+FILE *myfile;
+char cnt;
+int rows=-1;
+myfile=fopen(filename, "r");
+while(!feof(myfile))
+	{
+	fscanf(myfile,"%c",&cnt);
+	if(cnt == '\n')
+		++rows;
+	}
+fclose(myfile);
+return rows;
+}

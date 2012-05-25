@@ -10,7 +10,7 @@ wherever possible. Thank you! You are awesome!
 /* This function detects all the circles and ellipses it can find in the ROI specified by 'rect'. The parameter 'pospos' is the number to be appended to the logfile to be generated. eg: if pospos = 2, the name of the file is logfile2.txt.
 The parameter 'pc' is the number of peripheral circles to be detected. It is passed to the main application 'get_capture.cpp' or 'get_image.cpp' as an argument.
 */
-int findcircles(IplImage* img, CvMemStorage* storage, CvRect rect, int pc, int pospos)
+int findcircles(IplImage* img, CvMemStorage* storage, CvRect rect, int pc, int hc,int pospos,float arr_height[],line arr_lines[])
 {
 // All the declarations go here
 IplImage *imgcpy = NULL, *imbinary=NULL, *impyr = NULL, *imcontour=NULL ;
@@ -122,15 +122,16 @@ for( l = 0; l < N ; l++ )
 		//printf("no of hollow = %d\n",hollow); // // Optional print for debugging
 		}
 	// Check if the marker has been completely found
-	if(periphery == pc && hollow == 3) // In our case, we have used markers with 3 hollow circles compulsarily
+	if(periphery == pc && hollow == hc) // In our case, we have used markers with 3 hollow circles compulsorily
 		{
 		cvResetImageROI(imgcpy);
-		//printf("Decoded value --> %d\n",decode);
-		//printf("Peripheral circles --> %d, Hollow circles --> %d\n",periphery,hollow);
-		//sprintf(nameof,"logfile%d.txt",pospos);		// Uncomment to log data
-		//logdata(ellipse1.size.width,ellipse1.size.height,decode,pospos); // Uncomment to log data					
-		//logspace(nameof); // Introduces a new line in the log file - enhances readability
-		coord(decode,ellipse1.size.width,ellipse1.size.height,rect); // Call to the most important function - found in "coordinate.cc" - for printing the coordinate on the console
+		printf("Decoded value --> %d\n",decode);
+		printf("Peripheral circles --> %d, Hollow circles --> %d\n",periphery,hollow);
+		printf("outer --> ht = %f,wt = %f\n",ellipse1.size.height,ellipse1.size.width);
+		sprintf(nameof,"logfile%d.txt",pospos);		// Uncomment to log data
+		logdata(ellipse1.size.width,ellipse1.size.height,decode,pospos); // Uncomment to log data					
+		logspace(nameof); // Introduces a new line in the log file - enhances readability of logfile generated
+		coord(decode,ellipse1.size.width,ellipse1.size.height,rect,arr_height,arr_lines); // Call to the most important function - found in "coordinate.cc" - for printing the coordinate on the console
 		break;
 		}
 	}

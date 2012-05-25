@@ -11,6 +11,7 @@ This file will take the image as input, try to detect the marker and report the 
 #include "find_border.cc"
 #include "makeroi.cc"
 
+
 int main(int argc, char **argv)
 {
 	CvCapture* capture = NULL ;
@@ -20,10 +21,21 @@ int main(int argc, char **argv)
 
 	int periphery = 0;
 	bool brk = false;
-	int pc = (int)argv[1][0] - 48 ;                 // Convert the arguments passed from char array to integer
-	int pospos = (int)argv[2][0] - 48;
+	int pc = (int)argv[1][0] - 48 ;                 // The first argument - number of peripheral circles to detect
+	int hc = (int)argv[2][0] - 48 ;					// The second argument - number of hollow circles to detect
+	int pospos = (int)argv[3][0] - 48;				// The third argument - append this to the logfile name	 
+	int i;
+	
+	int rows = get_rows("calibrate.txt");			// This file should always exist in the same folder
+	
+	float arr_height[rows];
+	float arr_dist[rows];
+	float arr_width[rows];
+	line arr_lines[rows-1];							// The definition of this class is included in the "distance.cc" file
+	
+	gen_calibdata("calibrate.txt",arr_height, arr_width, arr_dist,rows);	// This function will generate the calibration data
 
-	for(int i=1;i<=10;++i)
+	for(i=1;i<=20;++i)
 		{
 		brk = false;
 		capture = cvCaptureFromCAM(1);                  // '1' - select an external webcam, '-1' - select any webcam
@@ -44,10 +56,11 @@ int main(int argc, char **argv)
 		for(int index=0;index<val->total ; index += 4)
 			{
 			CvRect myroi = makeROI(val,index);			// This function exists in the file "makeroi.cc" - it returns a CvRect structure that contains data required to describe the region of interest for various functions
-			periphery = findcircles(img,storage,myroi,pc,pospos); // This function exists in "find_identifier.cc" - it returns the number of peripheral circles found in the region of interest specified in the arguments
+			periphery = findcircles(img,storage,myroi,pc,hc,pospos,arr_height,arr_lines); // This function exists in "find_identifier.cc" - it returns the number of peripheral circles found in the region of interest specified in the arguments
 
 			if(periphery >= pc)							// This is the breaking condition - indicating that marker has been found
 				{		
+				printf("Circles found - exiting\n");				
 				brk = true;
 				break;
 				}

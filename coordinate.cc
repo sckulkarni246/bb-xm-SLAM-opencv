@@ -30,16 +30,16 @@ double disp(double act_ht, double img_ht, double a)
 /* In this function, 'decoded' is the decoded value of your marker - you can choose any scheme. We used simple binary system - the first circle from the bottom right is the MSB and the first circle from the top left is the LSB. Each hollow circle is a '1' and filled circle is a '0'. To see the markers we used, see the 'Downloads' section.
 */
 
-void coord(int decoded, double width, double height, CvRect rect)
+void coord(int decoded, double width, double height, CvRect rect, float arr_height[], line arr_lines[])
 {
 	if(decoded >= 0) 		// you can change this file to complicate your application. eg: for multiple markers, there will be an if-else ladder	
 	{
-	 cout<<" x = "<<disp(10,height,marker_centre(rect).x)<<",y = "<<distance(height)<<endl; //10 also parameter taken as input
+	 cout<<" x = "<<disp(10,height,marker_centre(rect).x)<<",y = "<<distance(height,arr_height,arr_lines)<<endl; //10 also parameter taken as input
 	}
 
 	else
 	{
-	 cout<<" x = "<<distance(height)<<",y = "<<disp(10,height,marker_centre(rect).x)<<endl;
+	 cout<<" x = "<<distance(height,arr_height,arr_lines)<<",y = "<<disp(10,height,marker_centre(rect).x)<<endl;
 	}
 }
 
