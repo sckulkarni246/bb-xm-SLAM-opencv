@@ -23,4 +23,4 @@ In this repo, you can find the source code of my internship project - "Indoor Na
 
 1) http://shashankaditya.wordpress.com/ -- An informal documentation of the project - especially the milestones
 
-2) http://theperfectmixture.wordpress.com/ -- My tech blog with some posts dedicated to this project
+2) http://theperfectmixture.wordpress.com/ -- My old tech blog with some posts dedicated to this project
